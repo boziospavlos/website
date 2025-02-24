@@ -35,6 +35,23 @@
             border-radius: 10px;
             margin-top: 20px;
         }
+        .attraction {
+            cursor: pointer;
+            color: #2c3e50;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .attraction:hover {
+            text-decoration: underline;
+        }
+        .info {
+            display: none;
+            background-color: #e7e7e7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -46,12 +63,25 @@
         <p>Τα Ιωάννινα είναι μια ιστορική πόλη της Ηπείρου, γνωστή για τη λίμνη Παμβώτιδα, το κάστρο και την πλούσια πολιτιστική κληρονομιά της.</p>
         
         <h2>Αξιοθέατα</h2>
-        <ul>
-            <li>Το Νησάκι της λίμνης</li>
-            <li>Το Κάστρο των Ιωαννίνων</li>
-            <li>Το Σπήλαιο Περάματος</li>
-            <li>Το Μουσείο Αργυροτεχνίας</li>
-        </ul>
+        <div class="attraction" onclick="showInfo('nisiaki')">Το Νησάκι της λίμνης</div>
+        <div class="info" id="nisiaki">
+            Το Νησάκι της λίμνης Παμβώτιδας είναι ένα μικρό νησί με πλούσια ιστορία και αρχιτεκτονική. Είναι γνωστό για τα μοναστήρια και την παραδοσιακή ταβέρνα.
+        </div>
+
+        <div class="attraction" onclick="showInfo('kastro')">Το Κάστρο των Ιωαννίνων</div>
+        <div class="info" id="kastro">
+            Το Κάστρο των Ιωαννίνων είναι ένα από τα σημαντικότερα μνημεία της πόλης. Χτίστηκε τον 6ο αιώνα και έχει πανοραμική θέα της λίμνης.
+        </div>
+
+        <div class="attraction" onclick="showInfo('spilaio')">Το Σπήλαιο Περάματος</div>
+        <div class="info" id="spilaio">
+            Το Σπήλαιο Περάματος είναι ένα φυσικό αξιοθέατο με εντυπωσιακές σταλακτίτες και σταλαγμίτες. Βρίσκεται λίγα χιλιόμετρα έξω από την πόλη.
+        </div>
+
+        <div class="attraction" onclick="showInfo('mousio')">Το Μουσείο Αργυροτεχνίας</div>
+        <div class="info" id="mousio">
+            Το Μουσείο Αργυροτεχνίας παρουσιάζει την παραδοσιακή τεχνική της αργυροχρυσοχοΐας, η οποία είναι χαρακτηριστική των Ιωαννίνων.
+        </div>
 
         <div class="weather">
             <h2>Ο καιρός στα Ιωάννινα</h2>
@@ -66,5 +96,21 @@
     <footer>
         &copy; 2025 Ιωάννινα - Όμορφη Ήπειρος
     </footer>
+
+    <script>
+        function showInfo(id) {
+            // Hide all info divs
+            var infoDivs = document.querySelectorAll('.info');
+            infoDivs.forEach(function(div) {
+                div.style.display = 'none';
+            });
+
+            // Show the selected info div
+            var selectedDiv = document.getElementById(id);
+            if (selectedDiv) {
+                selectedDiv.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
