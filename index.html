@@ -3,122 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ιωάννινα - Πληροφορίες</title>
+    <title>Ενοριακή Ιστοσελίδα</title>
     <style>
+        /* Βασικά στυλ */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
+            background-image: url('church_background.jpg'); /* Εικόνα εκκλησίας ως φόντο */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #4A4A4A;
         }
+
         header {
-            background-color: #2c3e50;
+            background-color: rgba(74, 54, 41, 0.9); /* Βυζαντινό καφέ */
             color: white;
             padding: 20px;
+            text-align: center;
             font-size: 24px;
         }
-        .content {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        footer {
-            background-color: #2c3e50;
-            color: white;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(94, 74, 61, 0.9); /* Βυζαντινό καφέ (πιο ανοιχτό) */
             padding: 10px;
-            margin-top: 20px;
         }
-        .weather {
-            background-color: #e7e7e7;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
         }
-        .attraction {
-            cursor: pointer;
-            color: #2c3e50;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .attraction:hover {
+
+        nav a:hover {
             text-decoration: underline;
         }
-        .info {
-            display: none;
-            background-color: #e7e7e7;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-            text-align: left;
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9); /* Λευκό με διαφάνεια */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .info img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 10px;
+
+        h2 {
+            color: #5E4A3D; /* Βυζαντινό καφέ */
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(74, 54, 41, 0.9); /* Βυζαντινό καφέ */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Ειδικά στυλ για καρτέλες */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
 <body>
     <header>
-        Καλώς ήρθατε στα Ιωάννινα!
+        <h1>Ενοριακή Ιστοσελίδα</h1>
     </header>
+
+    <nav>
+        <a href="#" onclick="showTab('intro')">Εισαγωγή</a>
+        <a href="#" onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>
+        <a href="#" onclick="showTab('info')">Πληροφορίες</a>
+        <a href="#" onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
+    </nav>
+
     <div class="content">
-        <h2>Λίγα λόγια για την πόλη</h2>
-        <p>Τα Ιωάννινα είναι μια ιστορική πόλη της Ηπείρου, γνωστή για τη λίμνη Παμβώτιδα, το κάστρο και την πλούσια πολιτιστική κληρονομιά της.</p>
-        
-        <h2>Αξιοθέατα</h2>
-        <div class="attraction" onclick="showInfo('nisiaki')">Το Νησάκι της λίμνης</div>
-        <div class="info" id="nisiaki">
-            <img src="lake.jpg" alt="Νησάκι της λίμνης">
-            Το Νησάκι της λίμνης Παμβώτιδας είναι ένα μικρό νησί με πλούσια ιστορία και αρχιτεκτονική. Είναι γνωστό για τα μοναστήρια και την παραδοσιακή ταβέρνα.
+        <!-- Εισαγωγή -->
+        <div id="intro" class="tab-content active">
+            <h2>Καλώς ήρθατε στην Ενορία μας</h2>
+            <p>
+                Η ενοριακή μας κοινότητα είναι αφιερωμένη στην πίστη, την αγάπη και την υπηρεσία. 
+                Ο ναός μας, χτισμένος στο πνεύμα της βυζαντινής αρχιτεκτονικής, είναι ένας τόπος προσευχής 
+                και συγκέντρωσης για όλους τους πιστούς. Εδώ θα βρείτε πνευματική υποστήριξη, αγάπη και 
+                μια ζωντανή κοινότητα.
+            </p>
         </div>
 
-        <div class="attraction" onclick="showInfo('kastro')">Το Κάστρο των Ιωαννίνων</div>
-        <div class="info" id="kastro">
-            <img src="images/kastro.jpg" alt="Κάστρο των Ιωαννίνων">
-            Το Κάστρο των Ιωαννίνων είναι ένα από τα σημαντικότερα μνημεία της πόλης. Χτίστηκε τον 6ο αιώνα και έχει πανοραμική θέα της λίμνης.
+        <!-- Πρόγραμμα Λειτουργιών -->
+        <div id="program" class="tab-content">
+            <h2>Πρόγραμμα Λειτουργιών</h2>
+            <ul>
+                <li><strong>Κυριακή:</strong> Θεία Λειτουργία - 08:00 π.μ.</li>
+                <li><strong>Δευτέρα:</strong> Εσπερινός - 06:00 μ.μ.</li>
+                <li><strong>Τρίτη:</strong> Θεία Λειτουργία - 08:00 π.μ.</li>
+                <li><strong>Τετάρτη:</strong> Παρακλητική Κανονική - 06:00 μ.μ.</li>
+                <li><strong>Πέμπτη:</strong> Θεία Λειτουργία - 08:00 π.μ.</li>
+                <li><strong>Παρασκευή:</strong> Ακολουθία Αγίου Παρασκευή - 06:00 μ.μ.</li>
+                <li><strong>Σάββατο:</strong> Εσπερινός - 06:00 μ.μ.</li>
+            </ul>
         </div>
 
-        <div class="attraction" onclick="showInfo('spilaio')">Το Σπήλαιο Περάματος</div>
-        <div class="info" id="spilaio">
-            <img src="images/spilaio.jpg" alt="Σπήλαιο Περάματος">
-            Το Σπήλαιο Περάματος είναι ένα φυσικό αξιοθέατο με εντυπωσιακές σταλακτίτες και σταλαγμίτες. Βρίσκεται λίγα χιλιόμετρα έξω από την πόλη.
+        <!-- Πληροφορίες -->
+        <div id="info" class="tab-content">
+            <h2>Πληροφορίες</h2>
+            <p>
+                <strong>Διεύθυνση:</strong> Οδός Εκκλησίας 123, ΤΚ 12345, Πόλη<br>
+                <strong>Τηλέφωνο:</strong> 210 123 4567<br>
+                <strong>Email:</strong> info@enoria.gr
+            </p>
         </div>
 
-        <div class="attraction" onclick="showInfo('mousio')">Το Μουσείο Αργυροτεχνίας</div>
-        <div class="info" id="mousio">
-            <img src="images/mousio.jpg" alt="Μουσείο Αργυροτεχνίας">
-            Το Μουσείο Αργυροτεχνίας παρουσιάζει την παραδοσιακή τεχνική της αργυροχρυσοχοΐας, η οποία είναι χαρακτηριστική των Ιωαννίνων.
-        </div>
-
-        <div class="weather">
-            <h2>Ο καιρός στα Ιωάννινα</h2>
-            <!-- Weather Widget -->
-            <a class="weatherwidget-io" href="https://forecast7.com/el/39d6720d85/ioannina/" data-label_1="IOANNINA" data-label_2="WEATHER" data-theme="original">IOANNINA WEATHER</a>
-            <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-            </script>
-            <!-- End of Weather Widget -->
+        <!-- Εκδηλώσεις & Εκδρομές -->
+        <div id="events" class="tab-content">
+            <h2>Εκδηλώσεις & Εκδρομές</h2>
+            <ul>
+                <li><strong>15 Αυγούστου:</strong> Εορτασμός της Κοιμήσεως της Θεοτόκου.</li>
+                <li><strong>25 Δεκεμβρίου:</strong> Εορτασμός των Χριστουγέννων.</li>
+                <li><strong>Εκδρομή:</strong> Προσκύνημα στη Μονή Οσίου Λουκά - 10 Οκτωβρίου.</li>
+            </ul>
         </div>
     </div>
+
     <footer>
-        &copy; 2025 Ιωάννινα - Όμορφη Ήπειρος
+        &copy; 2023 Ενοριακή Κοινότητα - Όλα τα δικαιώματα διατηρούνται.
     </footer>
 
     <script>
-        function showInfo(id) {
-            // Hide all info divs
-            var infoDivs = document.querySelectorAll('.info');
-            infoDivs.forEach(function(div) {
-                div.style.display = 'none';
+        // Συνάρτηση για εναλλαγή καρτελών
+        function showTab(tabId) {
+            // Απόκρυψη όλων των καρτελών
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
             });
 
-            // Show the selected info div
-            var selectedDiv = document.getElementById(id);
-            if (selectedDiv) {
-                selectedDiv.style.display = 'block';
+            // Εμφάνιση της επιλεγμένης καρτέλας
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
             }
         }
     </script>
