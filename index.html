@@ -37,6 +37,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -82,14 +83,29 @@
     </header>
 
     <nav>
-        <a href="#" onclick="showTab('intro')">Πληροφορίες για το ναό</a>
-        <a href="#" onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>        
-        <a href="#" onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
-        <a href="#" onclick="showTab('info')">Επικοινωνία</a>
+        <a onclick="showTab('intro')">Πληροφορίες για το ναό</a>
+        <a onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>        
+        <a onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
+        <a onclick="showTab('info')">Επικοινωνία</a>
     </nav>
 
     <div class="content">
-        <div id="info" class="tab-content active">
+        <div id="intro" class="tab-content active">
+            <h2>Καλώς ήρθατε στην ιστοσελίδα του ιερού ναού μας</h2>
+            <p>Ο ναός χτίστηκε το ..., διατηρεί παράδοση ...</p>
+        </div>
+        
+        <div id="program" class="tab-content">
+            <h2>Πρόγραμμα Λειτουργιών</h2>
+            <p>Ακολουθεί το πρόγραμμα των λειτουργιών μας...</p>
+        </div>
+        
+        <div id="events" class="tab-content">
+            <h2>Εκδηλώσεις & Εκδρομές</h2>
+            <p>Δείτε τις προσεχείς εκδηλώσεις και εκδρομές.</p>
+        </div>
+        
+        <div id="info" class="tab-content">
             <h2>Πληροφορίες</h2>
             <p>
                 <strong>Διεύθυνση:</strong> Πολυτεχνείου X, 45500 Ελεούσα Ιωαννίνων<br>
