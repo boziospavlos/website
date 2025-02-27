@@ -22,7 +22,7 @@
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 20px;
+            font-size: 24px;
         }
 
         nav {
@@ -36,7 +36,7 @@
             color: white;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         nav a:hover {
@@ -85,25 +85,25 @@
     <nav>
         <a href="#" onclick="showTab('intro')">Πληροφορίες για το ναό</a>
         <a href="#" onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>
-        <a href="#" onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
         <a href="#" onclick="showTab('info')">Επικοινωνία</a>
+        <a href="#" onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
     </nav>
 
     <div class="content">
         <!-- Εισαγωγή -->
         <div id="intro" class="tab-content active">
             <h2>Καλώς ήρθατε στην Ενορία μας</h2>
-            <p>Ο ναός χτίστηκε το ..., διατηρεί παράδοση ...</p>
+            <p>Ο ναός χτίστηκε το ..., διατηρεί παράδοση ..., μπλα μπλα μπλα</p>
         </div>
 
         <!-- Πρόγραμμα Λειτουργιών -->
         <div id="program" class="tab-content">
             <h2>Πρόγραμμα Λειτουργιών</h2>
             <ul>
-                <li><strong>Κυριακή:</strong> Θεία Λειτουργία στον Ιερό ναό Κοιμήσεως της Θεοτόκου - 07:30 π.μ. </li>
-                <li><strong>Τετάρτη:</strong> Παράκληση στην Παναγία  στον Ιερό ναό Κοιμήσεως της Θεοτόκου - 06:00 μ.μ. </li>
-                <li><strong>Παρασκευή:</strong> Εσπερινός στον Ιερό ναό Αγίου Γεωργίου - 06:00 μ.μ. </li>
-                <li><strong>Σάββατο:</strong> Θεία Λειτουργία - 07:30 π.μ. στον Ιερό ναό Παναγίας Ελλεούσης </li>
+                <li><strong>Κυριακή:</strong> Θεία Λειτουργία - 07:30 π.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου</li>
+                <li><strong>Τετάρτη:</strong> Παράκληση στην Παναγία - 06:00 μ.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου </li>
+                <li><strong>Παρασκευή:</strong> Εσπερινός - 06:00 μ.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου </li>
+                <li><strong>Σάββατο:</strong> Θεία Λειτουργία - 07:30 π.μ. στον Ιερό ναό Αγίου Γεωργίου</li>
             </ul>
         </div>
 
@@ -111,7 +111,7 @@
         <div id="info" class="tab-content">
             <h2>Πληροφορίες</h2>
             <p>
-                <strong>Διεύθυνση:</strong> Πολυτεχνείου, Ελεούσα 45445, Ιωάννινα<br>
+                <strong>Διεύθυνση:</strong> <a href="https://www.google.com/maps/place/%CE%99%CE%B5%CF%81%CF%8C%CF%82+%CE%9D%CE%B1%CF%8C%CF%82+%CE%9A%CE%BF%CE%B9%CE%BC%CE%AE%CF%83%CE%B5%CF%89%CF%82+%CE%98%CE%B5%CE%BF%CF%84%CF%8C%CE%BA%CE%BF%CF%85/@39.7049147,20.7984386,14z/data=!4m6!3m5!1s0x135bc1eec7479e0f:0x20d18752b7f3e4e6!8m2!3d39.708293!4d20.7907791!16s%2Fg%2F11hbn33f0s" target="_blank">Πολυτεχνείου, Ελεούσα 45445, Ιωάννινα</a><br>
                 <strong>Τηλέφωνο:</strong> 26510215555<br>
                 <strong>Email:</strong> info@enoria.gr
             </p>
@@ -122,30 +122,12 @@
             <h2>Εκδηλώσεις & Εκδρομές</h2>
             <ul>
                 <li><strong>Εκδρομή:</strong> Προσκύνημα στη Μονή Οσίου Λουκά - 10 Οκτωβρίου.</li>
-                <li><strong>Κατηχητικό:</strong> Κάθε Κυριακή - 12:00 μ.μ.</li>
             </ul>
         </div>
     </div>
 
     <footer>
-        &copy; 2025  Ιερός Ναός Κοιμήσεως της Θεοτόκου - Ελεούσα Ιωάννινα
+        &copy; 2025 Ενοριακή Κοινότητα Ιερού Ναού Κοιμήσεως της Θεοτόκου - Ελεούσα Ιωάννινα
     </footer>
-
-    <script>
-        // Συνάρτηση για εναλλαγή καρτελών
-        function showTab(tabId) {
-            // Απόκρυψη όλων των καρτελών
-            var tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(function(tab) {
-                tab.classList.remove('active');
-            });
-
-            // Εμφάνιση της επιλεγμένης καρτέλας
-            var selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.classList.add('active');
-            }
-        }
-    </script>
 </body>
 </html>
