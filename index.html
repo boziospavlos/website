@@ -84,16 +84,16 @@
 
     <nav>
         <a href="#" onclick="showTab('intro')">Πληροφορίες για το ναό</a>
-        <a href="#" onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>
-        <a href="#" onclick="showTab('info')">Επικοινωνία</a>
+        <a href="#" onclick="showTab('program')">Πρόγραμμα Λειτουργιών</a>        
         <a href="#" onclick="showTab('events')">Εκδηλώσεις & Εκδρομές</a>
+        <a href="#" onclick="showTab('info')">Επικοινωνία</a>
     </nav>
 
     <div class="content">
         <!-- Εισαγωγή -->
         <div id="intro" class="tab-content active">
             <h2>Καλώς ήρθατε στην Ενορία μας</h2>
-            <p>Ο ναός χτίστηκε το ..., διατηρεί παράδοση ..., μπλα μπλα μπλα</p>
+            <p>Ο ναός χτίστηκε το ..., διατηρεί παράδοση ...</p>
         </div>
 
         <!-- Πρόγραμμα Λειτουργιών -->
@@ -101,8 +101,11 @@
             <h2>Πρόγραμμα Λειτουργιών</h2>
             <ul>
                 <li><strong>Κυριακή:</strong> Θεία Λειτουργία - 07:30 π.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου</li>
+                
                 <li><strong>Τετάρτη:</strong> Παράκληση στην Παναγία - 06:00 μ.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου </li>
+                
                 <li><strong>Παρασκευή:</strong> Εσπερινός - 06:00 μ.μ. στον Ιερό ναό Κοιμήσεως της Θεοτόκου </li>
+                
                 <li><strong>Σάββατο:</strong> Θεία Λειτουργία - 07:30 π.μ. στον Ιερό ναό Αγίου Γεωργίου</li>
             </ul>
         </div>
@@ -129,5 +132,19 @@
     <footer>
         &copy; 2025 Ενοριακή Κοινότητα Ιερού Ναού Κοιμήσεως της Θεοτόκου - Ελεούσα Ιωάννινα
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
